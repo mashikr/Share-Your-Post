@@ -3,6 +3,10 @@
 class Pages extends Controller {
 
     public function index() {
+        if (isloggedIn()) {
+            redirect('posts');
+        }
+        
         $data = [
             'page' => 'home',
             'title' => "Share Your Post",
